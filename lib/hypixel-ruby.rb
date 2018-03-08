@@ -2,6 +2,11 @@ require 'open-uri'
 require 'json'
 
 class HypixelAPI
+  
+  def fetch(url)
+    source = (open URI(url)).read
+    return JSON.parse(source, :symbolize_names => true)
+  end
   def initialize(key)
     @key = key
   end
@@ -14,10 +19,6 @@ class HypixelAPI
     end
     return url
   end
-  def fetch(url)
-    source = Net::HTTP.get URI(url)
-    return JSON.parse(url, :symbolize_names => true)
-  end
   
 # ========================================
 #              Main Methods
@@ -27,39 +28,39 @@ class HypixelAPI
 # ex: api.player( :uuid => "<uuid here>" )
 #
   
-  def boosters(args)
+  def boosters(args={})
     fetch(url(:"boosters", args))
   end
   
-  def findguild(args)
+  def findguild(args={})
     fetch(url(:"findguild", args))
   end
   
-  def friends(args)
+  def friends(args={})
     fetch(url(:"friends", args))
   end
   
-  def guild(args)
+  def guild(args={})
     fetch(url(:"guild", args))
   end
   
-  def key(args)
+  def key(args={})
     fetch(url(:"key", args))
   end
   
-  def leaderboards(args)
+  def leaderboards(args={})
     fetch(url(:"leaderboards", args))
   end
   
-  def player(args)
+  def player(args={})
     fetch(url(:"player", args))
   end
   
-  def session(args)
+  def session(args={})
     fetch(url(:"session", args))
   end
   
-  def watchdogstats(args)
+  def watchdogstats(args={})
     fetch(url(:"watchdogstats", args))
   end
   

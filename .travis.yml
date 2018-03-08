@@ -1,4 +1,4 @@
 language: ruby
 rvm:
   - 2.3.1
-script: ruby hypixel-ruby.rb
+script: ruby lib/hypixel-ruby.rb

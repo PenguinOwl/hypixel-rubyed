@@ -1,5 +1,5 @@
 Gem::Specification.new do |spec|
-  spec.name        = 'hypixel-ruby'
+  spec.name        = 'hypixel-ruby' + ENV['TRAVIS_BRANCH'] == "dev" ? '-dev' : ''
   spec.version     = '0.0.1'
   spec.date        = Date.today.to_s
   spec.summary     = "Barebones wrapper for hyixel stats"

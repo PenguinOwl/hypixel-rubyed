@@ -4,7 +4,8 @@ Gem::Specification.new do |spec|
     g = '-dev'
   end
   spec.name        = 'hypixel-ruby' + g
-  spec.version     = ENV['TRAVIS_TAG']
+  spec.version     = '0.0.2' 
+  spec.version     = ENV['TRAVIS_TAG'] if ENV['TRAVIS']
   spec.date        = Date.today.to_s
   spec.summary     = "Barebones wrapper for hyixel stats"
   spec.description = "Coming Soon"

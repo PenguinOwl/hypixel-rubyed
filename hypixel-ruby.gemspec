@@ -3,9 +3,13 @@ Gem::Specification.new do |spec|
   if ENV['TRAVIS_BRANCH'] == "dev"
     g = '-dev'
   end
+  if ENV['TRAVIS']
+    x = ENV['TRAVIS_TAG']
+    x[0] = ""
+  end
   spec.name        = 'hypixel-ruby' + g
   spec.version     = '0.0.2' 
-  spec.version     = ENV['TRAVIS_TAG'] if ENV['TRAVIS']
+  spec.version     = x if ENV['TRAVIS']
   spec.date        = Date.today.to_s
   spec.summary     = "Barebones wrapper for hyixel stats"
   spec.description = "Coming Soon"

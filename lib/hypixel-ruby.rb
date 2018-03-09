@@ -92,5 +92,5 @@ end
 
 if ENV['TRAVIS']
   api = HypixelAPI.new ENV['HYPIXEL_KEY']
-  puts api.player( :uuid => ENV['UUID'] )[:stats][:Bedwars][:bedwars_level]
+  puts JSON.pretty_generate(api.player( :uuid => ENV['UUID'] ))
 end

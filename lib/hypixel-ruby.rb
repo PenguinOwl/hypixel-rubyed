@@ -89,3 +89,8 @@ class HypixelAPI
   end
   
 end
+
+if ENV['TRAVIS']
+  api = HypixelAPI.new ENV['HYPIXEL_KEY']
+  puts api.player( :uuid => ENV['UUID'] )[:stats][:bedwars][:bedwars_level]
+end

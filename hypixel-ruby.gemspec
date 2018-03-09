@@ -11,8 +11,8 @@ Gem::Specification.new do |spec|
   spec.version     = '0.0.2' 
   spec.version     = x if ENV['TRAVIS']
   spec.date        = Date.today.to_s
-  spec.summary     = "Barebones wrapper for hyixel stats"
-  spec.description = "Coming Soon"
+  spec.summary     = "Barebones wrapper for Hypixel stats"
+  spec.description = "Robust, but powerful. Source avaible at https://github.com/PenguinOwl/hypixel-rubyed/"
   spec.authors     = ["PenguinOwl"]
   spec.files       = ["lib/hypixel-ruby.rb"]
   spec.homepage    = 'https://github.com/PenguinOwl/hypixel-rubyed/'

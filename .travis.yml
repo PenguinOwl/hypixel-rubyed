@@ -9,3 +9,4 @@ deploy:
   gem: hypixel-ruby
   on:
     repo: PenguinOwl/hypixel-rubyed
+    tags: true

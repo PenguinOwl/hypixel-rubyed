@@ -4,14 +4,14 @@ require 'json'
 # Base object for the api. Only create one for the entire build as it keeps track of your request limits. <b>All methods are avaible at https://github.com/HypixelDev/PublicAPI/tree/master/Documentation/methods, use arguments are parms.</b>
 class HypixelAPI
   
-  min = 60
-  requests = 0
+  @min = 60
+  @requests = 0
   
   # Parses url to Rubyfiy the request, internal so you won't need to use it for much.
   def fetch(url)
-    if min != Time.now.min
-      min = Time.now.min
-      requests = 0
+    if @min != Time.now.min
+      @min = Time.now.min
+      @requests = 0
     end
     if requests < 120
       requests += 1

@@ -4,7 +4,7 @@ Gem::Specification.new do |spec|
     g = '-dev'
   end
   if ENV['TRAVIS']
-    x = ENV['TRAVIS_TAG']
+    x = ENV['TRAVIS_TAG'].clone.unfreeze
     x[0] = ""
   end
   spec.name        = 'hypixel-ruby' + g

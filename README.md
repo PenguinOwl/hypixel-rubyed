@@ -14,3 +14,6 @@ Add the following to your Gemfile
 ```
 Run `bundler install` and require it in your source with `require 'hypixel-ruby'` and get cracking!
 # Resources 
+[Documentation](http://www.rubydoc.info/gems/hypixel-ruby/HypixelAPI)
+[Rubygems](https://rubygems.org/gems/hypixel-ruby)
+[Public API](https://github.com/HypixelDev/PublicAPI/tree/master/Documentation/methods)

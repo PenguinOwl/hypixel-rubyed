@@ -1,13 +1,23 @@
 require 'open-uri'
 require 'json'
 
-# Base object for the api. Only create one for the entire build as it will one day keep track of your request limits. <b>All methods are avaible at https://github.com/HypixelDev/PublicAPI/tree/master/Documentation/methods, use arguments are parms.</b>
+# Base object for the api. Only create one for the entire build as it keeps track of your request limits. <b>All methods are avaible at https://github.com/HypixelDev/PublicAPI/tree/master/Documentation/methods, use arguments are parms.</b>
 class HypixelAPI
+  
+  min = 60
+  requests = 0
   
   # Parses url to Rubyfiy the request, internal so you won't need to use it for much.
   def fetch(url)
-    source = (open URI(url)).read
-    return JSON.parse(source, :symbolize_names => true)
+    if min != Time.now.min
+      min = Time.now.min
+      requests = 0
+    end
+    if requests < 120
+      requests += 1
+      source = (open URI(url)).read
+      return JSON.parse(source, :symbolize_names => true)
+    end
   end
   
   # Creates a new object with your API key. <b>If requests are failing for you, remember to check your key.</b>

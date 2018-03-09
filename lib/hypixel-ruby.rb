@@ -13,8 +13,8 @@ class HypixelAPI
       @min = Time.now.min
       @requests = 0
     end
-    if requests < 120
-      requests += 1
+    if @requests < 120
+      @requests += 1
       source = (open URI(url)).read
       return JSON.parse(source, :symbolize_names => true)
     end

@@ -1,4 +1,13 @@
 language: ruby
 rvm:
-  - 2.3.1
+- 2.3.1
 script: ruby lib/hypixel-ruby.rb
+deploy:
+deploy:
+  provider: rubygems
+  api_key:
+    secure: O3pXQtpu2SEOJOWdPgX/oMIfFzj8l7XXYWvPd1Vp1tau5tjkBJ/LVL2cSecWWTKr6PDKcO6DYtfepOII+WqedcYX/c8eJnFaHRa07Us8+12JJ6cV7XGvyrwlOHr7P0jSt1i9hQbWtGiRM38IpvQo4R7sOhDl9nVrXHmFKBNbLdnUJtXra5vF8LoaU4zsqXd/OlkW2BP8mFEyfw5AmlYirnUj4smYPTbXZt/cuq4kaxYksl0lVq1OxCy8wbW3n2JGQHWqLJ4szqQfaz1Zyn+UvOzZrGWdGjNULpA4VJRPWXyyUSmRhWGN9BXLu2FZEUc4Un47XJo8ZrnH5yIYeP0rkj6ckxaYhSeJd4SKVlsxxBEdQ3pOkE8B7mZgP77UjjEA1NZjwzKV7m1iuZ8Jx6ImbLdL2BmLj/yVXA468vExGMFO00t3rNis9edqhgdfZ+sZUPsAdlI20sg12h4hK/+bt/vLabOn1fbAYZvKFIUgPoeQlcSN4A86WLWKt0rvQ2igfFbtftne01M8oPZRfoRS1ZYxhoA5NwLUIglGYHHweb3XiB8eHlMKVz8kJugmKBqtQ72tp1+1/r7Etm4hz5PD/KmV2/OhCuK/nHmPHYLAdqjOxNhyKTQ5r0ggLqK86+nho9iJ5nWDVHybqB15Ojmh4Zl3AVLUY1faIK0LiT8BUnw=
+  gem:
+    master: hypixel-ruby
+    dev: hypixel-ruby-dev
+  gemspec: hypixel-ruby.gemspec

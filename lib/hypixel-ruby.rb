@@ -10,9 +10,9 @@ class HypixelAPI
     return JSON.parse(source, :symbolize_names => true)
   end
   
-  # Creates a new object with your API key. *If request are failing for you, remember to check your key.*
-  def initialize(key)
-    @key = key
+  # Creates a new object with your API key. *If requests are failing for you, remember to check your key.*
+  def initialize(api_key)
+    @key = api_key
   end
   
   # Builds a url from the request type and parameters. *Do not specify your key in the parameters.*

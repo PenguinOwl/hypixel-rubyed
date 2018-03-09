@@ -1,7 +1,7 @@
 require 'open-uri'
 require 'json'
 
-# Base object for the api. Only create one for the entire build as it will one day keep track of your request limits. *All methods are avaible at https://github.com/HypixelDev/PublicAPI/tree/master/Documentation/methods, use arguments are parms.*
+# Base object for the api. Only create one for the entire build as it will one day keep track of your request limits. <b>All methods are avaible at https://github.com/HypixelDev/PublicAPI/tree/master/Documentation/methods, use arguments are parms.</b>
 class HypixelAPI
   
   # Parses url to Rubyfiy the request, internal so you won't need to use it for much.

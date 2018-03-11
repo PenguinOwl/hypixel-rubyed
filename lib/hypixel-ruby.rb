@@ -1,5 +1,6 @@
 require 'open-uri'
 require 'json'
+require 'hashie'
 
 # Base object for the api. Only create one for the entire build as it keeps track of your request limits. <b>All methods are avaible at https://github.com/HypixelDev/PublicAPI/tree/master/Documentation/methods, use arguments are parms.</b>
 class HypixelAPI
@@ -16,7 +17,9 @@ class HypixelAPI
     if @requests < 120
       @requests += 1
       source = (open URI(url)).read
-      return JSON.parse(source, :symbolize_names => true)
+      x = JSON.parse(source, :symbolize_names => true)
+      x.extend Hashie::Extensions::DeepFind
+      return x
     end
   end
   

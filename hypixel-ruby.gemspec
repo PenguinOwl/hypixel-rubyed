@@ -17,4 +17,5 @@ Gem::Specification.new do |spec|
   spec.files       = ["lib/hypixel-ruby.rb"]
   spec.homepage    = 'https://github.com/PenguinOwl/hypixel-rubyed/'
   spec.license     = 'MIT'
+  spec.add_runtime_dependency 'hashie'
 end

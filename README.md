@@ -4,7 +4,7 @@ A barebones API wrapper for the Hypixel Public API.
 Im not a big fan of sifting through documentation, so lets get to the point.
 ```code:ruby
 api = HypixelAPI.new("API KEY HERE")
-level = api.player(:uuid => "some uuid")[:stats][:bedwars][:bedwars_level].to_i
+level = api.player(:uuid => "some uuid").deep_find(:hypixel_level).to_i
 ```
 Nice, consice, and barebones.
 # Installation

@@ -95,5 +95,5 @@ end
 
 if ENV['TRAVIS']
   api = HypixelAPI.new ENV['HYPIXEL_KEY']
-  puts api.player( :uuid => ENV['UUID'] )[:player][:achivements][:bedwars_level]
+  puts api.player( :uuid => ENV['UUID'] ).deep_find(:bedwars_level)
 end
